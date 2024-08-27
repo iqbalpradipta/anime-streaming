@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  email       String   @unique 
+  name        String?  @unique
+  password    String
+  profilePic  String
+  isAdmin     Boolean @default(false)
+}
+
+model Movie {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  desc        String
+  img         String
+  imgTitle    String
+  imgSm       String
+  trailer     String
+  video       String
+  year        String
+  limit       Int
+  genre       String
+  isSeries    Boolean @default(false)
+  list        List? @relation(fields: [listId], references: [id])
+  listId      String? @db.ObjectId
+}
+
+model List {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  type        String
+  genre       String
+  content     Movie[]
+}
