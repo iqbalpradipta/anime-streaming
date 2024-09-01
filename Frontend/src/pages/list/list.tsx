@@ -34,7 +34,7 @@ function Lists() {
           <InputBase
             sx={{ ml: 1, flex: 1, color: "white" }}
             placeholder="Search..."
-            inputProps={{ "aria-label": "search google maps" }}
+            inputProps={{ "aria-label": "Search..." }}
           />
         </Box>
         <Divider sx={{ backgroundColor: "white", mt: 2 }} />

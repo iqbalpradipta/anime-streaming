@@ -21,6 +21,8 @@ function Populer() {
           padding: "14px 16px",
           justifyContent: "center",
           AlignItems: "center",
+          borderRadius: 2,
+          boxShadow: '16px 11px 15px 0px rgba(0,0,0,0.75);',
         }}
       >
         <Swiper

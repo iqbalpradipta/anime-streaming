@@ -15,6 +15,7 @@ function ButtonWatch() {
             backgroundColor: "black",
             color: "white",
           },
+          boxShadow: "16px 11px 15px 0px rgba(0,0,0,0.75);",
         }}
       >
         Watch Now !

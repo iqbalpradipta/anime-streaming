@@ -4,6 +4,9 @@ import Layout from "./layout";
 import Genre from "./pages/genre/genre";
 import List from "./pages/list/list";
 import About from "./pages/about/about";
+import Login from "./pages/Login";
+import Register from "./pages/register";
+import GenreDetail from "./pages/GenreDetail";
 
 function App() {
   const router = createBrowserRouter([
@@ -27,8 +30,20 @@ function App() {
           path: "/about",
           element: <About />
         },
+        {
+          path: "/anime",
+          element: <GenreDetail />
+        }
       ],
     },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
+    }
   ]);
   return <RouterProvider router={router} />;
 }

@@ -1,7 +1,9 @@
 import { Box, Button, Grid, Link } from "@mui/material";
 import genre from "../../mocks/genre.json";
+import { useNavigate } from "react-router-dom";
 
 function Genre() {
+  const navigate = useNavigate()
   return (
     <>
       <Box
@@ -32,6 +34,7 @@ function Genre() {
                   mt: 5,
                   backgroundColor: "transparent",
                 }}
+                onClick={() => navigate('/anime')}
               >
                 {data.genre}
               </Button>
