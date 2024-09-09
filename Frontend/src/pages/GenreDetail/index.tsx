@@ -7,17 +7,37 @@ import {
   CardMedia,
   Divider,
   Grid,
+  Pagination,
   Typography,
 } from "@mui/material";
 import lists from "../../mocks/lists.json";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function GenreDetail() {
+  const navigate = useNavigate()
+
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  const itemsPerPage = 6;
+
+  const totalPages = Math.ceil(lists.length / itemsPerPage);
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = lists.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handlePageChange = (event: unknown, value: number) => {
+    setCurrentPage(value);
+  };
+
   return (
     <>
       <Box
         sx={{
           border: "1px solid white",
           borderRadius: 2,
+          backgroundColor: "rgba(0,0,0,0.5)",
           boxShadow: "16px 11px 15px 0px rgba(0,0,0,0.75);",
           m: 8,
           p: 2,
@@ -34,7 +54,7 @@ function GenreDetail() {
           mt={1}
           mb={1}
         >
-          {lists.map((data, index) => (
+          {currentItems.map((data, index) => (
             <Grid item xs={4} key={index}>
               <Card
                 sx={{
@@ -89,13 +109,20 @@ function GenreDetail() {
                   </Box>
                 </CardContent>
                 <CardActions>
-                  <Button size="small" color="inherit">
+                  <Button size="small" color="inherit" onClick={() => navigate('/anime/detail')}>
                     Click Here !
                   </Button>
                 </CardActions>
               </Card>
             </Grid>
           ))}
+          <Pagination
+            count={totalPages}
+            page={currentPage}
+            onChange={handlePageChange}
+            color="primary"
+            sx={{ mt: 2 }}
+          />
         </Grid>
       </Box>
     </>

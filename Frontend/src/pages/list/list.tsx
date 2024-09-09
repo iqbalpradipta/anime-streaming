@@ -15,7 +15,15 @@ import lists from "../../mocks/lists.json";
 function Lists() {
   return (
     <>
-      <Box sx={{ padding: 2, margin: "20px auto", maxWidth: 1000 }}>
+      <Box
+        sx={{
+          padding: 5,
+          margin: "20px auto",
+          maxWidth: 1100,
+          backgroundColor: "rgba(0,0,0,0.5)",
+          borderRadius: 2,
+        }}
+      >
         <Typography variant="h5" gutterBottom>
           Movie List
         </Typography>

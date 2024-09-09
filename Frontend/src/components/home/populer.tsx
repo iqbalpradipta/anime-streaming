@@ -23,6 +23,7 @@ function Populer() {
           AlignItems: "center",
           borderRadius: 2,
           boxShadow: '16px 11px 15px 0px rgba(0,0,0,0.75);',
+          backgroundColor: 'rgba(0,0,0,0.5)'
         }}
       >
         <Swiper

@@ -3,16 +3,18 @@ import genre from "../../mocks/genre.json";
 import { useNavigate } from "react-router-dom";
 
 function Genre() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <>
       <Box
         sx={{
           border: "1px solid white",
+          borderRadius: 2,
           p: 5,
           mt: 2,
           width: "100%",
           height: "100%",
+          backgroundColor: "rgba(0,0,0,0.5)",
         }}
       >
         <Grid
@@ -29,12 +31,12 @@ function Genre() {
                 color="inherit"
                 sx={{
                   border: "1px solid white",
-                  width: "60%", 
+                  width: "60%",
                   height: "30%",
                   mt: 5,
                   backgroundColor: "transparent",
                 }}
-                onClick={() => navigate('/anime')}
+                onClick={() => navigate("/anime")}
               >
                 {data.genre}
               </Button>

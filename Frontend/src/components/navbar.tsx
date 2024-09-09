@@ -12,6 +12,7 @@ function Navbar() {
           borderRadius: 2,
           boxShadow: "16px 11px 15px 0px rgba(0,0,0,0.75);",
           padding: "14px 16px",
+          backgroundColor: 'rgba(0,0,0,0.5)'
         }}
       >
         <Grid container spacing={3} direction="row" alignItems="center">

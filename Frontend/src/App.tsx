@@ -7,6 +7,7 @@ import About from "./pages/about/about";
 import Login from "./pages/Login";
 import Register from "./pages/register";
 import GenreDetail from "./pages/GenreDetail";
+import AnimeDetail from "./pages/animeDetail";
 
 function App() {
   const router = createBrowserRouter([
@@ -33,6 +34,10 @@ function App() {
         {
           path: "/anime",
           element: <GenreDetail />
+        },
+        {
+          path: "/anime/detail",
+          element: <AnimeDetail />
         }
       ],
     },
